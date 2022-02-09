@@ -48,6 +48,25 @@ function getAdjacentNodes(node) {
     ];
 }
 
+function EulerSumArray(obj) {
+    let ans = 0;
+    for (let a in obj) {
+        ans += Math.pow(Math.E, obj[a]);
+    }
+    return ans;
+}
+function softmax(obj) {
+    let ans = {};
+    for (let s in obj) {
+        ans[s] = {};
+        let EulerSum = EulerSumArray(obj[s]);
+        for (let a in obj[s]) {
+            ans[s][a] = (Math.pow(Math.E, obj[s][a]) / EulerSum);
+        }
+    }
+    return ans;
+}
+
 module.exports = {
     'DELIMITER': DELIMITER,
     'MIN_SPACING': 5,
@@ -58,4 +77,5 @@ module.exports = {
     createDotDict,
     nodeKey,
     getAdjacentNodes,
+    softmax
 };

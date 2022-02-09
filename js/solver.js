@@ -36,6 +36,7 @@ function Solver(maze) {
 Solver.prototype = {
     startTraining: function () {
         this.policy = {}; // Q(s,a)
+        this.s_a_history = {};
         this.keyPointPolicy = {};
         console.log(this.keyPointPolicy);
         this.runs = 0;
@@ -196,6 +197,10 @@ Solver.prototype = {
         this.explore *= this.decay;
     },
 
+    policyIterate: function(){
+
+    },
+
     pushHistoryPolicy: function (current, policy, keyPointPolicy) {
         let actions = this.maze.connections[current];
         if (actions.length > 2) {
@@ -240,5 +245,15 @@ function _ensureDefaultVals(policy, current, maze, initial, keypoint) {
     }
 }
 
+function _initPolicy(connection) {
+    let theta = {};
+    for (let s in connection) {
+        theta[s] = {};
+        for (let a of connection[s]) {
+            theta[s][a] = 1;
+        }
+    }
+    return helpers.softmax(theta);
+}
 
 module.exports = Solver;
