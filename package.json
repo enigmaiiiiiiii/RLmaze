@@ -1,0 +1,29 @@
+{
+  "name": "maze",
+  "version": "0.0.1",
+  "description": "Generate a maze and solve it with RL",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify js/main.js -o js/build.js"
+  },
+  "keywords": [
+    "maze",
+    "reinforcement",
+    "learning"
+  ],
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "handlebars": "^4.7.7",
+    "hbsfy": "2.1.0"
+  },
+  "dependencies": {
+    "chart.js": "^3.7.0",
+    "underscore": "^1.13.2",
+    "uniq": "^1.0.1"
+  },
+  "browserify": {
+    "transform": [
+      "hbsfy"
+    ]
+  }
+}
