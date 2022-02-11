@@ -6,19 +6,12 @@ const Solver = require('./solver');
 const Stats = require('./stats');
 const Analyzer = require('./analyzer')
 
-const Info = require('./info');
-
 let mazeEl;
 let grid, maze, solver, stats, analyzer;
 window.solvers = [];
 
 
 const setup = function () {  // setup function
-    // new Info({
-    //     url: 'README.md',
-    //     keyTrigger: true,
-    //     container: 'wrapper'
-    // });
 
     // mazeEL是html元素
     mazeEl = document.querySelector('#maze');  // 选择id = maze的元素
@@ -59,8 +52,6 @@ const setupSolver = function () {
     stats = new Stats(solver);
     analyzer = new Analyzer(solver);
     maze.onGenerated(solver.startTraining.bind(solver));
-    // setTimeout(analyzer.wait_to_draw, 15000);
-    // _.defer(analyzer.wait_to_draw);
 };
 
 const newSolver = function () {

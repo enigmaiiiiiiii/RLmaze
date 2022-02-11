@@ -10,12 +10,11 @@ function Analyzer(solver) {
     ]
     this.el = document.querySelector('#analyzer');
     this.el.style.top = solver.maze.grid.canvas.height + "px";
-    this.draw(this.solver.keyPointPolicy);
 }
 
 Analyzer.prototype = {
 
-    draw: function (policyLog) {
+    makeChart: function (policyLog) {
         for (let s in policyLog) {
             let text = s + " state policy";
 
