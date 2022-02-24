@@ -237,9 +237,8 @@ Solver.prototype = {
         let curBestChoice = _.max(this.Qval[this.current]);  // max(a)Q[s(t+1), a]
 
         // q值更新公式
-        // let newValue = (1 - this.discount) * prevValue + this.alpha * (reward + this.discount * curBestChoice);
-        let newValue = (1 - this.eta) * prevValue + this.eta * (reward + this.discount * curBestChoice);
-        // Q(s,a)=(1-gamma)
+        let newValue = (1 - this.discount) * prevValue + this.alpha * (reward + this.discount * curBestChoice);
+        // let newValue = (1 - this.eta) * prevValue + this.eta * (reward + this.discount * curBestChoice);
         this.Qval[last][this.current] = newValue; // 更新: Q[s(t), a(t)]
 
         if (this.algorithm === algorithm[1]) {
