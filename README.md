@@ -11,3 +11,4 @@ open index.html
 
 ![chart](chart.png)
 
+[腾讯云服务器地址](http://101.35.83.33:8888/maze.html)
