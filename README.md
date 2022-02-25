@@ -1,13 +1,13 @@
 
+[Github原项目地址](https://github.com/rolyatmax/maze)
+
 增加的内容: 
 - 优化迷宫生成算法
 - 增加策略梯度算法
-- 添加抉择点的动作价值折线图
+- 用chart.js添加抉择点的动作价值折线图
 - 添加网格及其显示隐藏按钮
 - 可设置迷宫尺寸的input标签
  
-[Github原项目地址](https://github.com/rolyatmax/maze)
-
 ```
 npm install
 npm run build
